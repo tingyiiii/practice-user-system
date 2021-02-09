@@ -1,0 +1,10 @@
+<h1>註冊會員</h1>
+
+<%= form_for(@user, url: registrations_path) do |form| %>
+  <%= form.text_field :email, placeholder: "電子信箱" %>
+  <%= form.password_field :password, placeholder: "密碼" %>
+  <%= form.password_field :password_confirmation, placeholder: "確認密碼" %>
+  <%= form.text_field :nickname, placeholder: "暱稱" %>
+
+  <%= form.submit "註冊" %>
+<% end %>

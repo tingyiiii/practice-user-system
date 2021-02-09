@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li><%= link_to "首頁", root_path %></li>
+    <% if user_signed_in? %>
+      <p>hi, <%= current_user.nickname %></p>
+      <li><%= link_to "登出", destroy_sessions_path, method: :delete %></li>
+      <li><%= link_to "編輯會員資料", edit_registrations_path %></li>
+    <% else %>
+      <li><%= link_to "註冊", new_registrations_path %></li>
+      <li><%= link_to "登入", new_sessions_path %></li>
+    <% end %>
+  </ul>
+</nav>

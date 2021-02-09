@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'pages#home'
+
+  resource :registrations, only: [:create, :edit, :update, :show]
+  resource :registrations, path: '/', only: [] do
+    get :new, path: '/register', as: 'new'
+  end
+  resource :sessions
 end
